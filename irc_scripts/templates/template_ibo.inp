@@ -1,0 +1,31 @@
+! B3LYP D3BJ TightSCF RIJCOSX SP def2-SVP def2-SVP/C SlowConv Grid5 Printbasis LargePrint
+
+%maxcore 4000
+%pal nprocs 8 end
+
+%loc
+LocMet IAOIBO
+end
+
+%basis
+    newgto Ni "def2-TZVP" end
+    newauxgto Ni "def2-TZVP/C" end
+    newgto N "def2-SVP" end
+    newauxgto N "def2-SVP/C" end
+    newgto C "def2-SVP" end
+    newauxgto C "def2-SVP/C" end
+    newgto H "def2-SVP" end
+    newauxgto H "def2-SVP/C" end
+    newgto O "def2-SVP" end
+    newauxgto O "def2-SVP/C" end
+end
+
+%output
+   Print[P_Hirshfeld] 1
+end
+
+%scf
+  MaxIter 500
+end
+
+* xyzfile 0 2 /home/chandu/projects/ni-su/revision/IRC/2b/doublet/ORCA/20_points/__NAME__.xyz
